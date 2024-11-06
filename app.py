@@ -9,7 +9,7 @@ def find(a: str, b: str, i: list):
             return k[0]
 
     # raise Exception("valami nagyon nem jó")
-cuccok: list = ["kő", "papír", "olló"]
+cuccok: list = ["k ő", "papír", "olló"]
 user: str = input(f"Addja meg amit választott ({"/".join(cuccok)}): ")
 if user in cuccok:
     randomcucc: str = cuccok[random.randint(1, 3)-1]
