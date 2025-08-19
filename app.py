@@ -1,6 +1,6 @@
 import random
-tablazat = [[1, "kő", "papír"], [0, "kő", "olló"], [-1, "kő", "kő"], [0, "papír", "kő"], [1, "papír",
-                                                                                          "olló"], [-1, "papír", "papír"], [-1, "olló", "olló"], [1, "olló", "kő"], [0, "olló", "papír"]]
+tablazat = [[1, "rock", "paper"], [0, "rock", "scissors"], [-1, "rock", "rock"], [0, "paper", "rock"], [1, "paper",
+                                                                                          "scissors"], [-1, "paper", "paper"], [-1, "scissors", "scissors"], [1, "scissors", "rock"], [0, "scissors", "paper"]]
 
 
 def find(a: str, b: str, i: list):
@@ -9,21 +9,21 @@ def find(a: str, b: str, i: list):
             return k[0]
 
     # raise Exception("valami nagyon nem jó")
-cuccok: list = ["kő", "papír", "olló"]
-user: str = input(f"Addja meg amit választott ({"/".join(cuccok)}): ")
+cuccok: list = ["rock", "paper", "scissors"]
+user: str = input(f"Enter your choice ({"/".join(cuccok)}): ")
 if user in cuccok:
     randomcucc: str = cuccok[random.randint(1, 3)-1]
     print("\n\n-------\n",
-          f"választásom: {user}\n", f"Gép választása: {randomcucc}")
+          f"Your choice: {user}\n", f"Computer's choice: {randomcucc}")
     index: int = find(user, randomcucc, tablazat)
     if index == 0:
-        print(" Én nyertem")
+        print(" You won")
     elif index == 1:
-        print(" A gép nyert")
+        print(" The computer won")
     elif index == -1:
-        print(" Döntetlen lett")
+        print(" It's a draw")
     else:
-        print(" nagyon nagy baj van!!!")
+        print(" Something is very wrong!!!")
     print("-------\n\n")
 else:
-    print("Valami értelmess opciót kell megadni!!")
+    print("You must provide a valid option!!")
